@@ -1,10 +1,12 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Button, View, StyleSheet } from "react-native";
 import { theme } from "../../theme";
+import { useUserStore } from "../../store/useStore";
 
 export default function ProfileScreen() {
+  const toggleHasBoarderd = useUserStore((state) => state.toggleOnboarding);
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Profile</Text>
+      <Button title="Back to onboarding" onPress={toggleHasBoarderd} />
     </View>
   );
 }
@@ -16,7 +18,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: theme.colorWhwite,
   },
-  text: {
-    fontSize: 24,
-  },
+
 });
