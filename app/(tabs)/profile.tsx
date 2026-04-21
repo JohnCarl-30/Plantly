@@ -2,7 +2,7 @@ import {View, StyleSheet } from "react-native";
 import { theme } from "../../theme";
 import { useUserStore } from "../../store/useStore";
 import { PlantlyButton } from "../../components/PlantlyButton";
-import * as Haptics from "expo-haptics";
+
 
 export default function ProfileScreen() {
   const toggleHasBoarderd = useUserStore((state) => state.toggleOnboarding);
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: theme.colorWhwite,
+    backgroundColor: theme.colorWhite,
   },
 
 });

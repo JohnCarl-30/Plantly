@@ -8,14 +8,23 @@ type Props = {
 };
 
 export function PlantlyButton({ title, onPress }: Props) {
-    const handlePress = () => {
-        if (Platform.OS !== "web") {
-            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-        }
-        onPress();
+  const handlePress = () => {
+    if (Platform.OS !== "web") {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     }
+    onPress();
+  };
+
   return (
-    <Pressable onPress={handlePress} style={styles.button}>
+    <Pressable
+      onPress={handlePress}
+      style={(state) => {
+        if (state.pressed) {
+          return [styles.button, styles.buttonPressed];
+        }
+        return styles.button;
+      }}
+    >
       <Text style={styles.text}>{title}</Text>
     </Pressable>
   );
@@ -31,6 +40,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     paddingVertical: 12,
     borderRadius: 6,
-    backgroundColor: theme.colorGreen,
+    backgroundColor: theme.colorLeafyGreen,
+  },
+  buttonPressed: {
+    opacity: 0.7,
   },
 });
