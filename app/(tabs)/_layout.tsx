@@ -15,7 +15,7 @@ export default function Layout() {
     }
     return (
         <Tabs screenOptions={{ tabBarActiveTintColor : theme.colorGreen}}>
-            <Tabs.Screen name="index" options={{title: "Plantly",
+            <Tabs.Screen name="home" options={{title: "Plantly",
             tabBarShowLabel: false,
                 tabBarIcon: ({color, size}) => <Entypo name="leaf" size={size} color={color} />,
                 headerRight: () => (
