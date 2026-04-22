@@ -2,18 +2,11 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import { File, Paths } from "expo-file-system";
-
-export type PlantType = {
-  id: string;
-  name: string;
-  wateringFrequencyDays: number;
-  lastWateredAtTimestamp?: number;
-  imageUri?: string;
-};
+import { Plant } from "../models/plant";
 
 type PlantsState = {
   nextId: number;
-  plants: PlantType[];
+  plants: Plant[];
   addPlant: (
     name: string,
     wateringFrequencyDays: number,

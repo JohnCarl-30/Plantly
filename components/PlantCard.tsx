@@ -1,9 +1,9 @@
 import { StyleSheet, View, Text } from "react-native";
 import { theme } from "../theme";
-import { PlantType } from "../store/plantStore";
+import { Plant } from "../models/plant";
 import { PlantlyImage } from "./PlantlyImage";
 
-export function PlantCard({ plant }: { plant: PlantType }) {
+export function PlantCard({ plant }: { plant: Plant }) {
   return (
     <View style={styles.plantCard}>
       <PlantlyImage size={100} imageUri={plant.imageUri} />

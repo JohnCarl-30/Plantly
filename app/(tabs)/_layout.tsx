@@ -2,11 +2,11 @@ import {Redirect, Tabs} from "expo-router";
 import { Entypo } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { theme } from "../../theme";
-import { useUserStore } from "../../store/useStore";
+import { useTabsLayoutViewModel } from "../../viewmodels/useTabsLayoutViewModel";
 
 
 export default function Layout() {
-    const hasFinishedOnboarding = useUserStore((state) => state.hasFinishedOnboarding);
+    const { hasFinishedOnboarding } = useTabsLayoutViewModel();
 
 
     if (!hasFinishedOnboarding) {
