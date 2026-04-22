@@ -2,7 +2,7 @@ import { theme } from "../theme";
 import { StyleSheet, Text, Pressable, Platform } from "react-native";
 import * as Haptics from "expo-haptics";
 
-type Props = {
+export type Props = {
   title: string;
   onPress: () => void;
 };
